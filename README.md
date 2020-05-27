@@ -46,4 +46,4 @@ This project is an example warehouse API that can be used for demos and proof of
    Data can be pre-loaded using the *./mysql/init/db-warehouse.sql* file.
    
 4. Build the *warehouse-api* application container image:
-   - Modify the *./warehouse-api/Dockerfile* file use the NGINX Unit container image created in Step 1.
+   - Modify the *./warehouse-api/Dockerfile* file to use the NGINX Unit container image created in Step 1.
