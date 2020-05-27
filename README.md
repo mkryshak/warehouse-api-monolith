@@ -106,7 +106,7 @@ This project is an example warehouse API that can be used for demos and proof of
 ## API Specification ##
 The *warehouse-api* application accepts both HTTP and HTTPS traffic on ports 80 and 443, respectively.  The default URI prefix is `/api/v1/warehouse` (this can be changed).
 
-The following URIs will accept `GET` request methods:
+The following URIs will accept `GET` requests to fetch product information:
 - `/api/v1/warehouse/product`
 - `/api/v1/warehouse/prodcut/{sku}`
 - `/api/v1/warehouse/product/description/{sku}`
@@ -115,3 +115,7 @@ The following URIs will accept `GET` request methods:
 - `/api/v1/warehouse/product/rating/{sku}`
 
 \*\* `{sku}` represents the SKU ID (integer) of a specific product
+
+The following URIs will accept `POST` requests to create products:
+- `/api/v1/warehouse/product/{sku}`
+\*\* The request body must contain the information about the product being created. Use a `GET` request from `/api/v1/warehouse/product/{sku}` as a template and remove the `created` and `updated` fields.
