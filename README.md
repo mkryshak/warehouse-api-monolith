@@ -63,7 +63,13 @@ This project is an example warehouse API that can be used for demos and proof of
    <br>
 4. Build the *warehouse-api* application container image:
    
-   Update the *./warehouse-api/Dockerfile* file to refer to the NGINX Unit container image created in step one, then build the container image:
+   Update the *./warehouse-api/Dockerfile* file to reflect the NGINX Unit container image name created in step one:
+   
+   ```
+   FROM <namespace>/nginx-unit:1.17
+   ```
+      
+   Build the container image:
    
    ```
    docker build --file ./warehouse-api/Dockerfile --tag <namespace>/warehouse-api:monolith ./warehouse-api
