@@ -46,12 +46,16 @@ This project is an example warehouse API that can be used for demos and proof of
    Data can be pre-loaded using the *./mysql/init/db-warehouse.sql* file.
    
 4. Build the *warehouse-api* application container image:
-   - Update the *./warehouse-api/Dockerfile* file to use the NGINX Unit container image created in Step 1.
-   - Build the container image:
+   
+   Update the *./warehouse-api/Dockerfile* file to use the NGINX Unit container image created in Step 1.
+   ```
+   docker build --file ./warehouse-api/Dockerfile --tag <namespace>/warehouse-api:monolith ./warehouse-api
+   ```
+   
+   
+   
      
-     ```
-     docker build --file ./warehouse-api/Dockerfile --tag <namespace>/warehouse-api:monolith ./warehouse-api
-     ```
+     
      
      - The hostname of the database container used by the *warehouse-api* application is stored in the *./warehouse-api/www/config.json* file
      - The default SSL certificate uses the hostname "warehouse-api.nginx.net"
