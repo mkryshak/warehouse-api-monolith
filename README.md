@@ -21,6 +21,7 @@ This project is an example warehouse API that can be used for demos and proof of
    docker build --file ./mysql/Dockerfile --tag <namespace>/warehouse-api:database ./mysql
    ```
    <br>
+   
    ***Notes:***   
    The default username and password are configured as *root/root*. To specify a new username and password, modify the *./mysql/Dockerfile* file accordingly:
    
