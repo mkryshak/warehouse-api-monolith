@@ -129,6 +129,9 @@ The following URIs will accept `PATCH` requests to update specific information a
 
 The following URIs will accept `PUT` requests to update all information about a product:
 - `/api/v1/warehouse/product/{sku}`
+
+The following URIs will accept `DELETE` requests to delete products:
+- `/api/v1/warehouse/product/{sku}`
 <br>
 
 ***Notes:***
