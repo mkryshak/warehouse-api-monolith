@@ -8,15 +8,13 @@ This project is an example warehouse API that can be used for demos and proof of
    git clone https://github.com/mkryshak/warehouse-api-monolith.git
    cd warehouse-api-monolith
    ```
-   
-   
+      
 2. Build the NGINX Unit base container image:
    
    ```
    docker build --file ./nginx-unit/Dockerfile --tag <namespace>/nginx-unit:1.17 ./nginx-unit
    ```
-   
-   
+      
 3. Configure and initialize the warehouse database with pre-loaded data:
    
    ```
@@ -24,7 +22,7 @@ This project is an example warehouse API that can be used for demos and proof of
    ```
    
    ***Notes:***   
-   The username and password are configured as *root/root* in the *./mysql/Dockerfile* file as environment variables:
+   The default username and password are configured as *root/root*. To specify a new username and password, modify the *./mysql/Dockerfile* file accordingly:
    
    ```
    FROM mysql/mysql-server:5.7
@@ -63,8 +61,7 @@ This project is an example warehouse API that can be used for demos and proof of
    
    Data can be pre-loaded into the database at build time using the *./mysql/init/db-warehouse.sql* file.
    
-   
-4. Build the *warehouse-api* application container image:
+ 4. Build the *warehouse-api* application container image:
    
    Update the *./warehouse-api/Dockerfile* file to refer to the NGINX Unit container image created in step one, then build the container image:
    
