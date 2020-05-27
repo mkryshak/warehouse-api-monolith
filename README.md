@@ -78,11 +78,11 @@ This project is an example warehouse API that can be used for demos and proof of
    ***Notes:***
    - The hostname of the database container used by the *warehouse-api* application is stored in the *./warehouse-api/www/config.json* file. Modify as necessary.
    - The default SSL certificate uses the hostname "warehouse-api.nginx.net"
-   - To use a custom SSL certificate key, contatenate the certificate and key files together:
+   - To use a custom SSL certificate and key, contatenate the certificate and key files together:
      
      ```cat <certificate_file> <key_file> ./warehouse-api/tls/<hostname>```
        
-   - Update the *./warehouse-api/unit/conf.json* file to reflect the new concatenated certificate and key file name:
+   - Update the *./warehouse-api/unit/conf.json* file to reflect the newly concatenated certificate/key file name:
      
      ```
      "listeners": {
@@ -97,4 +97,10 @@ This project is an example warehouse API that can be used for demos and proof of
      }
      ```
      <br>  
-6. asdf
+6. Bring up the containers:
+   
+   ```
+   docker-compose up -d
+   ```
+
+## API Specification ##
