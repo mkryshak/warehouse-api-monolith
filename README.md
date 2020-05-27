@@ -21,6 +21,7 @@ This project is an example warehouse API that can be used for demos and proof of
    docker build --file ./mysql/Dockerfile --tag <namespace>/warehouse-api:database ./mysql
    ```
    
+   **Notes:**
    The username and password are configured as *root/root* in the *./mysql/Dockerfile* file as environment variables:
    
    ```
@@ -47,16 +48,13 @@ This project is an example warehouse API that can be used for demos and proof of
    
 4. Build the *warehouse-api* application container image:
    
-   Update the *./warehouse-api/Dockerfile* file to use the NGINX Unit container image created in Step 1.
+   Update the *./warehouse-api/Dockerfile* file to refer to the NGINX Unit container image created in step one, then build the container image:
+   
    ```
    docker build --file ./warehouse-api/Dockerfile --tag <namespace>/warehouse-api:monolith ./warehouse-api
    ```
    
-   
-   
-     
-     
-     
+   **Notes:**
      - The hostname of the database container used by the *warehouse-api* application is stored in the *./warehouse-api/www/config.json* file
      - The default SSL certificate uses the hostname "warehouse-api.nginx.net"
      - To use a custom SSL certificate key, contatenate the certificate and key files together:
