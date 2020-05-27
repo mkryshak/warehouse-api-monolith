@@ -113,19 +113,23 @@ The following URIs will accept `GET` requests to fetch product information:
 - `/api/v1/warehouse/product/inventory/{sku}`
 - `/api/v1/warehouse/product/price/{sku}`
 - `/api/v1/warehouse/product/rating/{sku}`
-  <br>
+<br>
+
 The following URIs will accept `POST` requests to create products:
 - `/api/v1/warehouse/product/{sku}`
-  <br>
+<br>
+
 The following URIs will accept `PATCH` requests to update specific information about a product:
 - `/api/v1/warehouse/product/description/{sku}`
 - `/api/v1/warehouse/product/inventory/{sku}`
 - `/api/v1/warehouse/product/price/{sku}`
 - `/api/v1/warehouse/product/rating/{sku}`
-  <br>
+<br>
+
 The following URIs will accept `PUT` requests to update all information about a product:
 - `/api/v1/warehouse/product/{sku}`
 <br>
+
 ***Notes:***
 - `{sku}` represents the SKU ID (integer) of a specific product
 - The request body for `POST`, `PATCH`, and `PUT` requests must contain the information about the product being created/updated. Use a `GET` request from `/api/v1/warehouse/product/{sku}` as a template and remove the `created` and `updated` fields.
