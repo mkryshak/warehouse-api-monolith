@@ -104,4 +104,7 @@ This project is an example warehouse API that can be used for demos and proof of
    ```
 
 ## API Specification ##
-The *warehouse-api* application accepts both HTTP and HTTPS traffic on ports 80 and 443, respectively.  The default prefix path is `/api/v1/warehouse` (this can be changed).
+The *warehouse-api* application accepts both HTTP and HTTPS traffic on ports 80 and 443, respectively.  The default URI prefix is `/api/v1/warehouse` (this can be changed).
+
+The following URIs will accept `GET` request methods:
+- `/api/v1/warehouse/product`
