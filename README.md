@@ -9,11 +9,13 @@ This project is an example warehouse API that can be used for demos and proof of
    cd warehouse-api-monolith
    ```
    
+   
 2. Build the NGINX Unit base container image:
    
    ```
    docker build --file ./nginx-unit/Dockerfile --tag <namespace>/nginx-unit:1.17 ./nginx-unit
    ```
+   
    
 3. Configure and initialize the warehouse database with pre-loaded data:
    
@@ -27,8 +29,8 @@ This project is an example warehouse API that can be used for demos and proof of
    ```
    FROM mysql/mysql-server:5.7
    
-   ENV MYSQL_USER=root \
-       MYSQL_ROOT_PASSWORD=root
+   ENV MYSQL_USER=<new_username> \
+       MYSQL_ROOT_PASSWORD=<new_password>
    
    COPY init /docker-entrypoint-initdb.d
    
@@ -40,11 +42,27 @@ This project is an example warehouse API that can be used for demos and proof of
    Any changes to the default username and password require a similar change to the *./mysql/init/init_db.sql* file:
    
    ```
-   GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root';
+   GRANT ALL PRIVILEGES ON *.* TO '<new_username>'@'%' IDENTIFIED BY '<new_password>';
    FLUSH PRIVILEGES;
    ```
    
-   Data can be pre-loaded using the *./mysql/init/db-warehouse.sql* file.
+   And to the *./warehouse-api/www/config.json* file:
+   
+   ```
+   {
+       "mysql": {
+           "server": {
+               "host": "warehouse-api-database",
+               "port": "3306"
+           },
+           "username": "<new_username>",
+           "password": "<new_password>"
+       }
+   }
+   ```
+   
+   Data can be pre-loaded into the database at build time using the *./mysql/init/db-warehouse.sql* file.
+   
    
 4. Build the *warehouse-api* application container image:
    
