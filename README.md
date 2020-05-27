@@ -108,3 +108,10 @@ The *warehouse-api* application accepts both HTTP and HTTPS traffic on ports 80 
 
 The following URIs will accept `GET` request methods:
 - `/api/v1/warehouse/product`
+- `/api/v1/warehouse/prodcut/{sku}`
+- `/api/v1/warehouse/product/description/{sku}`
+- `/api/v1/warehouse/product/inventory/{sku}`
+- `/api/v1/warehouse/product/price/{sku}`
+- `/api/v1/warehouse/product/rating/{sku}`
+
+\*\* `{sku}` represents the SKU ID (integer) of a specific product
