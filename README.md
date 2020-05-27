@@ -103,6 +103,7 @@ This project is an example warehouse API that can be used for demos and proof of
    docker-compose up -d
    ```
 
+
 ## API Specification ##
 The *warehouse-api* application accepts both HTTP and HTTPS traffic on ports 80 and 443, respectively.  The default URI prefix is `/api/v1/warehouse` (this can be changed).
 
@@ -134,15 +135,16 @@ The following URIs will accept `PUT` requests to update all information about a 
 - `{sku}` represents the SKU ID (integer) of a specific product
 - The request body for `POST`, `PATCH`, and `PUT` requests must contain the information about the product being created/updated. Use a `GET` request from `/api/v1/warehouse/product/{sku}` as a template and remove the `created` and `updated` fields.
 
-##Data Filtering##
+
+## Data Filtering ##
 Data received from `GET` requests can be filtered using the query string parameter `fields`:
 
-```curl http://localhost/api/v1/warehouse/product?fields=name```
+  ```curl http://localhost/api/v1/warehouse/product?fields=name```
 
 Multiple fields can select using `+` as a separator:
 
-```curl http://localhost/api/v1/warehouse/product?fields=name+quantity+retail```
+  ```curl http://localhost/api/v1/warehouse/product?fields=name+quantity+retail```
 
 A special field selector called `sku` can be used to return all SKU IDs:
 
-```curl http://localhost/api/v1/warehouse/product?fields=sku```
+  ```curl http://localhost/api/v1/warehouse/product?fields=sku```
