@@ -14,7 +14,7 @@ This project is an example warehouse API that can be used for demos and proof of
    ```
    docker build --file ./nginx-unit/Dockerfile --tag <namespace>/nginx-unit:1.17 ./nginx-unit
    ```
-      
+   <br>
 3. Configure and initialize the warehouse database with pre-loaded data:
    
    ```
@@ -60,8 +60,8 @@ This project is an example warehouse API that can be used for demos and proof of
    ```
    
    Data can be pre-loaded into the database at build time using the *./mysql/init/db-warehouse.sql* file.
-   
- 4. Build the *warehouse-api* application container image:
+   <br>
+4. Build the *warehouse-api* application container image:
    
    Update the *./warehouse-api/Dockerfile* file to refer to the NGINX Unit container image created in step one, then build the container image:
    
