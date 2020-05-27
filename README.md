@@ -43,3 +43,4 @@ This project is an example warehouse API that can be used for demos and proof of
    FLUSH PRIVILEGES;
    ```
    
+   Data can be pre-loaded using the *./mysql/init/db-warehouse.sql*
