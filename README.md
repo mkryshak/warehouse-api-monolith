@@ -155,6 +155,7 @@ Environment variables can used to set certain configuration parameters in the `w
 - **CFG_FILE** - the full path of the JSON configuraton file used by the application (default: `/www/config.json`)
 - **LOG_FILE** - the full path of the application error log (default: `/var/log/error.log)
 - **MAP_FILE** - the full path of the JSON map file (default: `/www/map.json`)
+<br>
 
 ***Warning!***
 
