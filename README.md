@@ -20,14 +20,12 @@ This project is an example warehouse API that can be used for demos and proof of
    ```
    docker build --file ./mysql/Dockerfile --tag <namespace>/warehouse-api:database ./mysql
    ```
-   The username and password are configured as *root/root* in the ./mysql/Dockerfile file as environment variables
+   The username and password are configured as *root/root* in the *./mysql/Dockerfile* file as environment variables:
    ```
    FROM mysql/mysql-server:5.7
    
-   LABEL maintainer="Matt Kryshak <matt.kryshak@nginx.com>"
-   
    ENV MYSQL_USER=root \
-	    MYSQL_ROOT_PASSWORD=root
+       MYSQL_ROOT_PASSWORD=root
    
    COPY init /docker-entrypoint-initdb.d
    
@@ -35,3 +33,9 @@ This project is an example warehouse API that can be used for demos and proof of
    
    CMD ["mysqld"]
    ```
+   Any changes to the default username and password require a similar change to the *./mysql/init/init_db.sql* file:
+   ```
+   GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'root';
+   FLUSH PRIVILEGES;
+   ```
+   
