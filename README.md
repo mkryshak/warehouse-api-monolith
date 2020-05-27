@@ -139,13 +139,22 @@ The following URIs will accept `PUT` requests to update all information about a 
 ## Data Filtering ##
 Data received from `GET` requests can be filtered using the query string parameter `fields`:
 
-   ```curl http://localhost/api/v1/warehouse/product?fields=name```
+```curl http://localhost/api/v1/warehouse/product?fields=name```
 
 Multiple fields can select using `+` as a separator:
 
-   ```curl http://localhost/api/v1/warehouse/product?fields=name+quantity+retail```
+```curl http://localhost/api/v1/warehouse/product?fields=name+quantity+retail```
 
 A special field selector called `sku` can be used to return all SKU IDs:
 
-   ```curl http://localhost/api/v1/warehouse/product?fields=sku```
+```curl http://localhost/api/v1/warehouse/product?fields=sku```
 
+## Configuration Settings ##
+Environment variables can used to set certain configuration parameters in the `warehouse-api` application:
+- BASE_URI - the default URI prefix for all incoming API requests (default: `/api/v1/warehouse`)
+- CFG_FILE - the full path of the JSON configuraton file used by the application (default: `/www/config.json`)
+- LOG_FILE - the full path of the application error log (default: `/var/log/error.log)
+- MAP_FILE - the full path of the JSON map file (default: `/www/map.json`)
+
+***Warning!***
+The `CFG_FILE`, `LOG_FILE` and `MAP_FILE` environment variables should not be modified unless you know what you're doing.
