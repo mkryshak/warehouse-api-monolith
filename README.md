@@ -139,12 +139,13 @@ The following URIs will accept `PUT` requests to update all information about a 
 ## Data Filtering ##
 Data received from `GET` requests can be filtered using the query string parameter `fields`:
 
-  ```curl http://localhost/api/v1/warehouse/product?fields=name```
+   ```curl http://localhost/api/v1/warehouse/product?fields=name```
 
 Multiple fields can select using `+` as a separator:
 
-  ```curl http://localhost/api/v1/warehouse/product?fields=name+quantity+retail```
+   ```curl http://localhost/api/v1/warehouse/product?fields=name+quantity+retail```
 
 A special field selector called `sku` can be used to return all SKU IDs:
 
-  ```curl http://localhost/api/v1/warehouse/product?fields=sku```
+   ```curl http://localhost/api/v1/warehouse/product?fields=sku```
+
