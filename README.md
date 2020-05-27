@@ -7,8 +7,9 @@ This project is an example warehouse API that can be used for demos and proof of
     git clone https://github.com/mkryshak/warehouse-api-monolith.git
     cd warehouse-api-monolith
     ```
-    <br>
-    <br>
+   
+   
+   
 2. Build the NGINX Unit base container image:
    
    ```
