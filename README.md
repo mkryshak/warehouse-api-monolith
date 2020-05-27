@@ -59,7 +59,7 @@ This project is an example warehouse API that can be used for demos and proof of
    }
    ```
    
-   Data can be pre-loaded into the database at build time using the *./mysql/init/db-warehouse.sql* file.
+   Data can be pre-loaded into the database at build time using the *./mysql/init/db-warehouse.sql* file.   
    <br>
 4. Build the *warehouse-api* application container image:
    
