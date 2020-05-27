@@ -21,7 +21,7 @@ This project is an example warehouse API that can be used for demos and proof of
    docker build --file ./mysql/Dockerfile --tag <namespace>/warehouse-api:database ./mysql
    ```
    
-   **Notes:**
+   ***Notes:***   
    The username and password are configured as *root/root* in the *./mysql/Dockerfile* file as environment variables:
    
    ```
