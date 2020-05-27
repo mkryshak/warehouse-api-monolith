@@ -1,2 +1,2 @@
 # warehouse-api-monolith
-Sample Warehouse API
+This is a sample warehouse API that can be used demos, proof of concepts, testing, etc.
