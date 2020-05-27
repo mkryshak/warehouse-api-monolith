@@ -1,0 +1,83 @@
+{
+	"listeners": {
+		"*:80": {
+			"pass": "applications/monolith"
+		},
+		"*:443": {
+			"pass": "applications/monolith",
+			"tls": {
+				"certificate": "warehouse-api.nginx.net"
+			}
+		}
+	},
+	
+	"routes": [
+		{
+			"match": {
+				"uri": "/api/v1/warehouse/product",
+				"method": "GET"
+			},
+			"action": {
+				"pass": "applications/monolith"
+			}
+		},
+		{
+			"match": {
+				"uri": "/api/v1/warehouse/product/*",
+				"method": ["DELETE", "GET", "POST", "PUT"]
+			},
+			"action": {
+				"pass": "applications/monolith"
+			}
+		},
+		{
+			"match": {
+				"uri": "/api/v1/warehouse/product/description/*",
+				"method": ["GET", "PATCH"]
+			},
+			"action": {
+				"pass": "applications/monolith"
+			}
+		},
+		{
+			"match": {
+				"uri": "/api/v1/warehouse/product/inventory/*",
+				"method": ["GET", "PATCH"]
+			},
+			"action": {
+				"pass": "applications/monolith"
+			}
+		},
+		{
+			"match": {
+				"uri": "/api/v1/warehouse/product/price/*",
+				"method": ["GET", "PATCH"]
+			},
+			"action": {
+				"pass": "applications/monolith"
+			}
+		},
+		{
+			"match": {
+				"uri": "/api/v1/warehouse/product/rating/*",
+				"method": ["GET", "PATCH"]
+			},
+			"action": {
+				"pass": "applications/monolith"
+			}
+		}
+	],
+	
+	"applications": {
+		"monolith": {
+			"type": "perl",
+			"script": "/www/monolith.psgi",
+			"working_directory": "/www",
+			"processes": 1,
+			"user": "root",
+			"group": "root"
+		}
+	},
+	
+	"access_log": "/var/log/access.log"
+}

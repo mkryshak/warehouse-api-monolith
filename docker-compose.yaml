@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  warehouse-api-database:
+    image: registry.nginx.net/warehouse-api:database
+    container_name: warehouse-api-database
+    hostname: warehouse-api-database
+    domainname: nginx.net
+    networks:
+    - local
+    ports:
+    - "3306:3306"
+  
+  warehouse-api-monolith:
+    image: registry.nginx.net/warehouse-api:monolith
+    container_name: warehouse-api-monolith
+    hostname: warehouse-api-monolith
+    domainname: nginx.net
+    networks:
+    - local
+    ports:
+    - "80:80"
+    - "443:443"
+    environment:
+    - BASE_URI=/api/v2/warehouse
+    - CFG_FILE=/www/config.json
+    - LOG_FILE=/var/log/error.log
+    - MAP_FILE=/www/map.json
+    depends_on:
+    - warehouse-api-database
+
+networks:
+  local:
+    external: false

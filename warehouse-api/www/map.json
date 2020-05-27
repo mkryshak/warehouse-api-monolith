@@ -1,0 +1,17 @@
+{	
+	"asset": "description",
+	"brand": "description",
+	"country": "description",
+	"name": "description",
+	"quantity": "inventory",
+	"region": "description",
+	"retail": "price",
+	"reviews": "rating",
+	"sale": "price",
+	"score": "rating",
+	"size": "description",
+	"style": "description",
+	"summary": "description",
+	"type": "description",
+	"unit": "description"
+}

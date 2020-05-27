@@ -1,0 +1,10 @@
+{
+	"mysql": {
+		"server": {
+			"host": "warehouse-api-database",
+			"port": "3306"
+		},
+		"username": "root",
+		"password": "root"
+	}
+}
