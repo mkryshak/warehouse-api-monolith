@@ -3,7 +3,6 @@
 #### Property of NGINX, Inc. ####
 #							  	#
 #      Date: December 08, 2019	#
-#    Author: Matt Kryshak		#
 #   Version: 2.0				#
 #								#
 #################################
